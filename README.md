@@ -1,6 +1,7 @@
 # get-audience-feedback
 
 This demo shows how to capture audience feedback using a QR code and process the request using Node-RED. A random message is  created acknowledging the feedback and returned to the invoker and as new tweet on Twitter.
+
 ![a sample QR Code](/screenshots/qrcode-for-url.png)
 
 ## Prerequisites
@@ -44,7 +45,7 @@ As this demo creates new tweets on [Twitter](http://www.twitter.com), a Twitter 
 **Step b3:** You should now see the imported flow in your Node-RED editor.
 ![Imported flow from clipboard](/screenshots/feedbackFlow.png)
 
-## c) Steps to configure your Node-RED flow
+## c) Steps to configure and deploy your Node-RED flow
 Now that we have the flow in the Node-RED editor, the next steps involve configuring and adapting the nodes to your likings and your Twitter username.
 
 **Step c1:** Configure the http inbound nodes in your Node-RED editor.
@@ -58,14 +59,21 @@ Now that we have the flow in the Node-RED editor, the next steps involve configu
 
 **Step c2:** Configure the function nodes in your Node-RED editor.
 - Doubleclick on the "positive feedback" function node (located in the upper middle of the flow). It should bring up a dialog like this:
+
 ![Imported flow from clipboard](/screenshots/edit-function-node.png)
+
 - Change the value for the variable "conference" from "#yourConferenceName" to an event name or hashtag your would like to use.
 - The result message (returned to the caller and posted to Twitter) uses a random feedback string and two random hashtags. All of them can be modified by adapting the contents of the arrays "messages", "hashtags1" and "hashtags2".
 - Towards the bottom of the script the result message is composed. Replace "yourTwitterID" by your Twitter username. Feel free to modify the structure of the message, to add or remove components. Note that the entire message needs to fit within the 140 character limit and that tweets need to have unique content.
 
 **Step c3:** Configure the Twitter output node in your Node-RED editor.
-- to be added
+- Doubleclick on the "Tweet" node. If no Twitter configuration node is present, the dialog will look like shown:
+
 ![Imported flow from clipboard](/screenshots/add-new-twitter-credentials.png)
+
+ - Click on the icon next to "Add new twitter-credentials". This will bring up a new dialog where you are asked to authenticate with Twitter. Your flow with the "Tweet" node and Twitter are going to exchange authentication tokens that are stored in a (usually invisible) Twitter configuration node within the flow. That token will later allow the "Tweet" node to access Twitter and post messages on your behalf without any further password prompts. Finish the configuration dialogs until you are back to the plain flow.
+ -  After all nodes have been configured, the flow can be deployed, i.e., made active. For this click the "Deploy" button. It can be found on the upper left. After clicking the button you should receive a notification that everything has been deployed successfully.
+ -  Want to test it? When visiting http://TheNameThatYouChoseInStepA5.mybluemix.net/yourURLfromC1 you should see a response composed of the message parts configured in step c2. In addition check the Twitter timeline for the user you picked in step c3.
 
 ## d) Steps to generate QR Code and set up feedback HTML page
 tbd - add QR codes for both URLs, adapt HTML page to Twitter account, tests
