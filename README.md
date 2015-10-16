@@ -13,7 +13,7 @@ As this demo creates new tweets on [Twitter](http://www.twitter.com), a Twitter 
 
 **Step 3:** Navigate to the Bluemix catalog.
 
-**Step 4:** Click on the "Node-RED Starter" tile. It's in the B"mapoilerplate" section towards the top of the catalog.
+**Step 4:** Click on the "Node-RED Starter" tile. It's in the "Boilerplate" section towards the top of the catalog.
 
 **Step 5:** Enter a unique name for your application into the "Name:" field on the right hand side.
 
@@ -32,6 +32,7 @@ As this demo creates new tweets on [Twitter](http://www.twitter.com), a Twitter 
 [{"id":"a26ac3f9.1d12e8","type":"http in","name":"positive feedback","url":"/yup","method":"get","swaggerDoc":"","x":308,"y":291,"z":"710b37a5.df17d8","wires":[["d1fa4292.7da448"]]},{"id":"37ea13df.1edf7c","type":"http response","name":"return web answer","x":843,"y":249,"z":"710b37a5.df17d8","wires":[]},{"id":"78a362ca.e5ebc4","type":"twitter out","twitter":"","name":"Tweet","x":804,"y":361,"z":"710b37a5.df17d8","wires":[]},{"id":"d1fa4292.7da448","type":"function","name":"positive feedback","func":"var conference=\"#coffeeWorld\";\nvar tstamp=(new Date).toISOString().replace(/t/gi,' ').trim();\n\nvar messages = [\n\t\"great session\",\n\t\"auf den Punkt\",\n\t\"viel gelernt\",\n\t\"great & interactive demo\",\n\t\"guter Vortrag, jetzt ein #Bier\"\n];\n\t\nvar hashtags1 = [\n\t\"#ibmbluemix\",\n\t\"#softlayer\",\n\t\"#paas\",\n\t\"#bluemix\",\n\t\"#ibmcloud\",\n\t\"#cloud\"\n];\n\t\nvar hashtags2 = [\n\t\"#twitter\",\n\t\"#integration\",\n\t\"#nodered\",\n\t\"#demo\",\n\t\"#iot\"\n];\n\t\nvar message = messages[Math.floor(Math.random() * messages.length)];\nvar hashtag1 = hashtags1[Math.floor(Math.random() * hashtags1.length)];\nvar hashtag2 = hashtags2[Math.floor(Math.random() * hashtags2.length)];\n\t\nmsg.payload=\"@data_henrik received positive feedback at \"\n +conference+\" '\"+message+\"' \"+hashtag1+\" \"+hashtag2+\" \"+tstamp;\n\nreturn msg;","outputs":1,"noerr":0,"x":545,"y":291,"z":"710b37a5.df17d8","wires":[["37ea13df.1edf7c","78a362ca.e5ebc4","f652c2cf.7788d"]]},{"id":"e6b60a72.43932","type":"http in","name":"mixed feedback","url":"/boo","method":"get","swaggerDoc":"","x":323,"y":450,"z":"710b37a5.df17d8","wires":[["2d2578a5.231478"]]},{"id":"2d2578a5.231478","type":"function","name":"mixed feedback","func":"var conference=\"#coffeWorld\";\nvar tstamp=(new Date).toISOString().replace(/t/gi,' ').trim();\n\nvar messages = [\n\t\"an OK session\",\n\t\"selbst meine Oma weiß mehr über die Cloud\",\n\t\"not what I expected\",\n\t\"well, COULD have been a good presentations\",\n\t\"#Bier vorher und Vortrag wäre gut geworden\"\n];\n\t\nvar hashtags1 = [\n\t\"#ibmbluemix\",\n\t\"#softlayer\",\n\t\"#paas\",\n\t\"#bluemix\",\n\t\"#ibmcloud\",\n\t\"#ibm\",\n\t\"#cloud\"\n];\n\t\nvar hashtags2 = [\n\t\"#demo\",\n\t\"#integration\",\n\t\"#nodered\",\n\t\"#enterprise\",\n\t\"#demo\",\n\t\"#iot\"\n];\n\t\nvar message = messages[Math.floor(Math.random() * messages.length)];\nvar hashtag1 = hashtags1[Math.floor(Math.random() * hashtags1.length)];\nvar hashtag2 = hashtags2[Math.floor(Math.random() * hashtags2.length)];\n\t\nmsg.payload=\"@data_henrik received mixed feedback at \"\n +conference+\" '\"+message+\"' \"+hashtag1+\" \"+hashtag2+\" \"+tstamp;\n\nreturn msg;","outputs":1,"noerr":0,"x":564,"y":447,"z":"710b37a5.df17d8","wires":[["78a362ca.e5ebc4","af68311.c747a5","45946be9.9775dc"]]},{"id":"f652c2cf.7788d","type":"debug","name":"Debugging","active":false,"console":"false","complete":"payload","x":819,"y":194,"z":"710b37a5.df17d8","wires":[]},{"id":"af68311.c747a5","type":"http response","name":"return web answer","x":840,"y":474,"z":"710b37a5.df17d8","wires":[]},{"id":"45946be9.9775dc","type":"debug","name":"Debugging","active":false,"console":"false","complete":"payload","x":815,"y":526,"z":"710b37a5.df17d8","wires":[]}]
 ```
 **Step 11:** Next import the flow into the Node-RED instance on Bluemix.
+![Importing from clipboard](importFromClipboard.png)
 
 - Click on the menu on the upper right of the Node-RED user interface
 
@@ -40,10 +41,12 @@ As this demo creates new tweets on [Twitter](http://www.twitter.com), a Twitter 
 - Paste the content of your clipboard (which should contain the flow that you copied in step 10 above) into the window and click on "Ok"
 
 **Step 12:** You should now see the imported flow in your Node-RED editor.
-
+![Imported flow from clipboard](feedbackFlow.png)
 
 ## Steps to configure your Node-RED flow
 tbd - involves verifying URL path of http input nodes, adapting conference names and message parts in the function nodes, and configuration of Twitter node
+
+![Edit the httpin node](edit-httpin-node.png)
 
 ## Steps to generate QR Code and set up feedback HTML page
 tbd - added QR codes for both URLs, adapt HTML page to Twitter account
