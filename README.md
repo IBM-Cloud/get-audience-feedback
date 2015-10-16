@@ -3,7 +3,7 @@
 This demo shows how to capture audience feedback using a QR code and process the request using Node-RED. A random message is  created acknowledging the feedback and returned to the invoker and as new tweet on Twitter.
 
 ## Prerequisites
-As this demo creates new tweets on ([Twitter](http://www.twitter.com)), a Twitter account is needed.
+As this demo creates new tweets on [Twitter](http://www.twitter.com), a Twitter account is needed.
 
 ## Steps to deploy Node-RED on Bluemix
 
@@ -43,10 +43,10 @@ As this demo creates new tweets on ([Twitter](http://www.twitter.com)), a Twitte
 
 
 ## Steps to configure your Node-RED flow
-tbd
+tbd - involves verifying URL path of http input nodes, adapting conference names and message parts in the function nodes, and configuration of Twitter node
 
 ## Steps to generate QR Code and set up feedback HTML page
-tbd
+tbd - added QR codes for both URLs, adapt HTML page to Twitter account
 
 # License
 
