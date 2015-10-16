@@ -1,6 +1,7 @@
 # get-audience-feedback
 
 This demo shows how to capture audience feedback using a QR code and process the request using Node-RED. A random message is  created acknowledging the feedback and returned to the invoker and as new tweet on Twitter.
+![a sample QR Code](/screenshots/qrcode-for-url.png)
 
 ## Prerequisites
 As this demo creates new tweets on [Twitter](http://www.twitter.com), a Twitter account is needed.
@@ -44,7 +45,7 @@ As this demo creates new tweets on [Twitter](http://www.twitter.com), a Twitter 
 ![Imported flow from clipboard](/screenshots/feedbackFlow.png)
 
 ## c) Steps to configure your Node-RED flow
-tbd - involves verifying URL path of http input nodes, adapting conference names and message parts in the function nodes, and configuration of Twitter node
+Now that we have the flow in the Node-RED editor, the next steps involve configuring and adapting the nodes to your likings and your Twitter username.
 
 **Step c1:** Configure the http inbound nodes in your Node-RED editor.
 - Doubleclick on the "positive feedback" http node (located on the upper left of the flow). It should bring up the following dialog:
@@ -67,7 +68,10 @@ tbd - involves verifying URL path of http input nodes, adapting conference names
 ![Imported flow from clipboard](/screenshots/add-new-twitter-credentials.png)
 
 ## d) Steps to generate QR Code and set up feedback HTML page
-tbd - added QR codes for both URLs, adapt HTML page to Twitter account
+tbd - add QR codes for both URLs, adapt HTML page to Twitter account, tests
+
+# Troubleshooting & Contacts
+tbd
 
 # License
 
