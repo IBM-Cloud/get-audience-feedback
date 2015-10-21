@@ -76,7 +76,16 @@ Now that we have the flow in the Node-RED editor, the next steps involve configu
  -  Want to test it? When visiting http://TheNameThatYouChoseInStepA5.mybluemix.net/yourURLfromC1 you should see a response composed of the message parts configured in step c2. In addition check the Twitter timeline for the user you picked in step c3.
 
 ## d) Steps to generate QR Code and set up feedback HTML page
-tbd - add QR codes for both URLs, adapt HTML page to Twitter account, tests
+**Step d1:** Generate [QR codes](https://en.wikipedia.org/wiki/QR_code) for both the URLs that you configured in step c1. 
+- In your QR code generator (if you don't have or know any, [Google is your friend](https://www.google.de/?q=qr+code+generator)) choose the type "URL" and type or paste in your URL for positive feedback. The URL should be something like http://TheNameThatYouChoseInStepA5.mybluemix.net/ThePathPickedInStepC1.
+- The generator now should produce an image with a QR code. Depending on the generator you may be able to change the image size or other features. Save the image to a local directory and name the file, e.g., "QRpositive.jpg".
+- Repeat the QR code generation for the URL for mixed feedback and save the image as well.
+
+**Step d2:** Save the file "showcase.html" to the same local directory
+
+**Step d3:** Adapt the file "showcase.html" to your QR codes and to your Twitter username.
+
+**Step d4:** Test the feedback demo
 
 # Troubleshooting & Contacts
 tbd
