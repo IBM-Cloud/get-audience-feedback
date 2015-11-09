@@ -1,6 +1,6 @@
 # get-audience-feedback
 
-This demo shows how to capture audience feedback using a QR code and process the request using Node-RED. A random message is  created acknowledging the feedback and returned to the invoker and as new tweet on Twitter.
+This demo shows how to capture audience feedback using a QR code and process the request using Node-RED. A random message is  created acknowledging the feedback. The message then is returned to the invoker and also sent as new tweet to Twitter.
 
 ![a sample QR Code](/screenshots/qrcode-for-url.png)
 
